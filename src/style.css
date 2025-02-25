@@ -1,0 +1,67 @@
+*, ::before,::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(to right, rgb(110, 110, 182),rgb(25, 25, 84));
+}
+
+.Cal-grid {
+    display: grid;
+    margin-top: 2rem;
+    justify-content: center;
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+}
+
+.Span-two {
+    grid-column: span 2;
+}
+
+.Cal-grid > .Span-two, .Cal-grid > .Op-btn {
+    background-color: rgb(224, 134, 16);
+}
+
+.Cal-grid > .Span-two:hover , .Cal-grid > .Op-btn:hover {
+    background-color: rgb(176, 106, 13);
+}
+
+.Output {
+    grid-column: 1/-1;
+    background-color: rgb(7, 3, 31);
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 0.75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.Output .Previous-output {
+    color: rgb(157, 160, 163);
+    font-size: 1.5rem;
+}
+
+.Output .Current-output {
+    color: rgb(255, 255, 255);
+    font-size: 2.5rem;
+}
+
+.Cal-grid > button {
+    cursor: pointer;
+    background-color: gold;
+    font-size: large;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 50px;
+
+}
+
+.Cal-grid > button:hover, .Cal-grid >button:focus {
+    background-color: goldenrod;
+}
+
