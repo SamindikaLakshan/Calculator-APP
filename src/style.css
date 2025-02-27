@@ -54,7 +54,7 @@ body {
 .Cal-grid > button {
     cursor: pointer;
     background-color: gold;
-    font-size: large;
+    font-size: xx-large;
     font-weight: bold;
     border: 2px solid black;
     border-radius: 50px;
