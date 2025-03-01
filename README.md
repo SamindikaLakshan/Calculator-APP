@@ -1,2 +1,2 @@
 # Calculator-APP
- Basic calculator
+ Basic calculator developed using React.js
