@@ -79,6 +79,29 @@ function reducer(state, { type, payload }) {
     case ACTIONS.CLEAR:
       return {}
 
+    case ACTIONS.DELETE_DIGIT:
+      if (state.overwrite) {
+        return {
+          ...state,
+          overwrite: false,
+          currentOperand: null,
+        }
+      }
+
+      if (state.currentOperand == null) {
+        return state
+      }
+      if (state.currentOperand.length === 1) {
+        return {
+          ...state,
+          currentOperand: null
+        }
+      }
+      return {
+        ...state,
+        currentOperand: state.currentOperand.slice(0, -1),
+      }
+
     default:
       return state
   }
@@ -128,7 +151,7 @@ function App() {
       </div>
 
       <button className='Span-two' onClick={() => dispatch({type: ACTIONS.CLEAR})}>AC</button>
-      <button className='Span-two' >DEL</button>
+      <button className='Span-two' onClick={() => dispatch({type: ACTIONS.DELETE_DIGIT})}>DEL</button>
 
 
       <DigitButton digit={"7"} dispatch={dispatch} />
