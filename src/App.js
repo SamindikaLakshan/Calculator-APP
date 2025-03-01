@@ -33,6 +33,14 @@ function reducer(state, { type, payload }) {
       if (state.currentOperand == null && state.previousOperand == null) {
         return state
       }
+
+      if (state.currentOperand == null) {
+        return {
+          ...state,
+          operation: payload.operation
+        }
+      }
+
       if (state.previousOperand == null) {
         return {
           ...state,
@@ -118,7 +126,7 @@ function App() {
       <OperationButton operation={"x"} dispatch={dispatch} />
       <DigitButton digit={"."} dispatch={dispatch} />
       <DigitButton digit={"0"} dispatch={dispatch} />
-      <OperationButton operation={"="} dispatch={dispatch} />
+      <button onClick={() => dispatch({type: ACTIONS.EVALUATE})}>=</button>
       <OperationButton operation={"÷"} dispatch={dispatch} />
 
 
